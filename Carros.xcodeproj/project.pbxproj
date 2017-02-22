@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */; };
 		DD013FB519FC4E4D00303133 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD013FB419FC4E4D00303133 /* Launch Screen.xib */; };
 		DD038547197195D900713BC4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DD038546197195D900713BC4 /* index.html */; };
 		DD03854A1971F83600713BC4 /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0385491971F83600713BC4 /* CarroService.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		DD013FB419FC4E4D00303133 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		DD038546197195D900713BC4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		DD0385491971F83600713BC4 /* CarroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroService.swift; path = Domain/CarroService.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				DD11B07A19799FF900179D7A /* XML-SAX */,
 				DD0385491971F83600713BC4 /* CarroService.swift */,
 				DD03854B1971F83F00713BC4 /* Carro.swift */,
+				5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				DDEF42DE19741A580012D3A7 /* Utils.swift in Sources */,
 				DDEF42E0197421070012D3A7 /* MyNavigationController.swift in Sources */,
 				DD03854C1971F83F00713BC4 /* Carro.swift in Sources */,
+				5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */,
 				DDD4A5641DAD162A006D326C /* StringUtils.swift in Sources */,
 				DD36A89819705A9000FBBB40 /* ListaCarrosViewController.swift in Sources */,
 				DD36A8A219705AE700FBBB40 /* SobreViewController.swift in Sources */,
