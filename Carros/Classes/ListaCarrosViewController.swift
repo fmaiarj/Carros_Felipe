@@ -12,6 +12,10 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
     
     @IBOutlet var tableView : UITableView!
     
+    
+    // Modificação inclusão do segment control (tipo de carro)
+    @IBOutlet var segmentControl: UISegmentedControl!
+    
     var carros: Array<Carro> = []
     
     // Tipo do carro
@@ -28,6 +32,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Título
         self.title = "Carros"
         
@@ -40,6 +45,21 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         // Registra o CarroCell.xib como UITableViewCell da tabela
         let xib = UINib(nibName: "CarroCell", bundle:nil)
         self.tableView.register(xib, forCellReuseIdentifier: "cell")
+        
+        
+        // Recupera tipo salvo nas preferências
+        
+        let idx = Prefs.getInt(chave: "tipoIdx")
+        let s = Prefs.getString(chave: "tipoString")
+        
+        if( s != nil) {
+            //como String é opcional precisamos testar antes
+            self.tipo = s!
+        }
+        
+        // Atualiza o índice no segmentControl
+        self.segmentControl.selectedSegmentIndex = idx!
+        
         
         // Busca carros
         self.buscarCarros()
@@ -104,6 +124,11 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         default:
             self.tipo = "luxo"
         }
+        
+        // Salva tipo nas preferências
+        Prefs.setInt(valor: idx, chave: "tipoInt")
+        Prefs.setString(valor: self.tipo, chave: "tipoString")
+        
     
         // Buscar os carros pelo tipo selecionado (classico, esportivo, luxo)
         self.buscarCarros()

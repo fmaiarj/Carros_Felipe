@@ -18,7 +18,7 @@ class Prefs {
         
     }
     
-    class func getString(valor: String, chave: String) -> String! {
+    class func getString(chave: String) -> String! {
         
         let prefs =  UserDefaults.standard
         let s = prefs.string(forKey: chave)
