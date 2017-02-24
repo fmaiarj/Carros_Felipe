@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */; };
+		5EFEEE511E5F5F67003C94FD /* DownloadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */; };
 		DD013FB519FC4E4D00303133 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD013FB419FC4E4D00303133 /* Launch Screen.xib */; };
 		DD038547197195D900713BC4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DD038546197195D900713BC4 /* index.html */; };
 		DD03854A1971F83600713BC4 /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0385491971F83600713BC4 /* CarroService.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
+		5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageView.swift; sourceTree = "<group>"; };
 		DD013FB419FC4E4D00303133 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		DD038546197195D900713BC4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		DD0385491971F83600713BC4 /* CarroService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarroService.swift; path = Domain/CarroService.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DD0385491971F83600713BC4 /* CarroService.swift */,
 				DD03854B1971F83F00713BC4 /* Carro.swift */,
 				5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */,
+				5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				DD36A89819705A9000FBBB40 /* ListaCarrosViewController.swift in Sources */,
 				DD36A8A219705AE700FBBB40 /* SobreViewController.swift in Sources */,
 				DD11B07919799FF200179D7A /* XMLCarroParser.swift in Sources */,
+				5EFEEE511E5F5F67003C94FD /* DownloadImageView.swift in Sources */,
 				DDD4A5651DAD162A006D326C /* String+Extensions.swift in Sources */,
 				DD03854A1971F83600713BC4 /* CarroService.swift in Sources */,
 				DD36A82B197027A000FBBB40 /* AppDelegate.swift in Sources */,

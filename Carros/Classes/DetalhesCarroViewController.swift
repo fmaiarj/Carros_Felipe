@@ -10,7 +10,7 @@ import UIKit
 
 class DetalhesCarroViewController: UIViewController {
     
-    @IBOutlet var img : UIImageView!
+    @IBOutlet var img : DownloadImageView!
     @IBOutlet var tDesc : UITextView!
     
     var carro: Carro?
@@ -31,8 +31,11 @@ class DetalhesCarroViewController: UIViewController {
             
             self.tDesc.text = c.desc;
             
-            let img = UIImage(named: c.url_foto)
-            self.img.image = img
+            self.img.setUrl(url: c.url_foto)
+            
+            
+            //let img = UIImage(named: c.url_foto)
+            //self.img.image = img
         }
     }
     

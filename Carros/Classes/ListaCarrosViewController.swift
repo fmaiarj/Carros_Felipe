@@ -85,12 +85,16 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         
         print("url \(carro.url_foto)")
 
+        // Implementacao anterior
+        
         // Busca a imagem (problema de performance aqui)
-        let data = try? Data(contentsOf: URL(string: carro.url_foto)!)
-        if(data != nil) {
-            let image = UIImage(data: data!)
-            cell.cellImg.image = image
-        }
+        //let data = try? Data(contentsOf: URL(string: carro.url_foto)!)
+        //if(data != nil) {
+        //    let image = UIImage(data: data!)
+        //    cell.cellImg.image = image
+       // }
+        
+        cell.cellImg.setUrl(url: carro.url_foto)
 
         return cell
     }

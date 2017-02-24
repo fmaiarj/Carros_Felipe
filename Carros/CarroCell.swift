@@ -13,7 +13,7 @@ class CarroCell: UITableViewCell {
     @IBOutlet var cellNome : UILabel!
     @IBOutlet var cellDesc : UILabel!
     
-    @IBOutlet var cellImg : UIImageView!
+    @IBOutlet var cellImg : DownloadImageView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
