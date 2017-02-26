@@ -11,7 +11,7 @@ import UIKit
 class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet var tableView : UITableView!
-    
+    @IBOutlet var progress : UIActivityIndicatorView!
     
     // Modificação inclusão do segment control (tipo de carro)
     @IBOutlet var segmentControl: UISegmentedControl!
@@ -140,9 +140,40 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
     
     func buscarCarros() {
         
-        self.carros = CarroService.getCarrosByTipoFromFile(tipo)
+        
+        let http = URLSession.shared
+        let url = URL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
+        let request = URLRequest(url: url)
+        
+        
+        let task = http.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            
+            if let error = error {
+                
+                Alerta.alerta("Erro: " + error.localizedDescription , viewController: self)
+            
+            }else {
+                
+                if let data = data {
+                
+                self.carros = CarroService.parserJson(data)
+                
+                    DispatchQueue.main.sync(execute: {
+                 
+                    // Atualiza o TableView
+                    
+                    self.tableView.reloadData()
+                    self.progress.stopAnimating()
+                    
+                })
+            }
+        }
+    })
+    
+        task.resume()
+        //self.carros = CarroService.getCarrosByTipoFromFile(tipo)
         
         // Atualiza o TableView
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
 }
