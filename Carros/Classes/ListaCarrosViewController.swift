@@ -33,6 +33,13 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         super.viewDidLoad()
         
         
+        // Botão Refresh na navigation Bar
+        
+        let btnAtualizar = UIBarButtonItem(title: "Atualizar" , style: .plain, target: self, action: "atualizar")
+        
+        self.navigationItem.rightBarButtonItem = btnAtualizar
+        
+        
         // Título
         self.title = "Carros"
         
@@ -141,6 +148,29 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
     func buscarCarros() {
         
         
+        
+        progress.startAnimating()
+        
+        
+        
+        //Faz a consulta dos carros , e retornar o array pela função de retorno
+        
+        CarroService.getCarrosByTipo(tipo: tipo, callback: { (carros: Array<Carro>, error: NSError?) in
+            
+            if(error != nil) {
+                Alerta.alerta("Error: " + error!.localizedDescription , viewController: self)
+            }else {
+                
+                self.carros = carros
+                self.tableView.reloadData()
+                self.progress.stopAnimating()
+            }
+            
+            
+        })
+        
+        
+        /*
         let http = URLSession.shared
         let url = URL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
         let request = URLRequest(url: url)
@@ -174,6 +204,16 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         //self.carros = CarroService.getCarrosByTipoFromFile(tipo)
         
         // Atualiza o TableView
-        //self.tableView.reloadData()
-    }
+        //self.tableView.reloadData() */
+    
+        }
+    
+        func atualizar() {
+            
+        
+            print("Função Atualizar Chamada!")
+            buscarCarros()
+            
+        }
+        
 }

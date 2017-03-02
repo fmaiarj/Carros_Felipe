@@ -9,6 +9,35 @@
 import Foundation
 
 class CarroService {
+    
+    
+    
+   
+    
+    class func getCarrosByTipo(tipo: String, callback: @escaping (_ carros: Array<Carro>, _ error:NSError?) -> Void ) {
+        
+        let http = URLSession.shared
+        let url = URL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
+        let request = URLRequest(url: url)
+        
+        let task = http.dataTask(with: request, completionHandler: { (data, response , error) -> Void in
+            
+            if(error != nil) {
+                
+                callback([], error as NSError?)
+                
+            }else{
+                
+                let carros = CarroService.parserJson(data!)
+                
+                DispatchQueue.main.async {
+                    callback(carros, nil)
+                }
+            }
+            
+        })
+        task.resume()
+    }
 
     // Busca por os carros pelo tipo: esportivos, clássicos ou luxo
     class func getCarrosByTipoFromFile(_ tipo: String) -> Array<Carro> {
