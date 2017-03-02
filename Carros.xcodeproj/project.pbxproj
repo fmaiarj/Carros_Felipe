@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EDA675C1E68D492002C215D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDA675B1E68D492002C215D /* libsqlite3.tbd */; };
 		5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */; };
 		5EFEEE511E5F5F67003C94FD /* DownloadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */; };
 		DD013FB519FC4E4D00303133 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD013FB419FC4E4D00303133 /* Launch Screen.xib */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EDA675B1E68D492002C215D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageView.swift; sourceTree = "<group>"; };
 		DD013FB419FC4E4D00303133 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDA675C1E68D492002C215D /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EDA675A1E68D492002C215D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA675B1E68D492002C215D /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD0385481971F80C00713BC4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +178,7 @@
 				DD36A827197027A000FBBB40 /* Carros */,
 				DD36A835197027A000FBBB40 /* CarrosTests */,
 				DD36A826197027A000FBBB40 /* Products */,
+				5EDA675A1E68D492002C215D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
