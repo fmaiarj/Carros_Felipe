@@ -37,7 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.rootViewController = tabBarController
 
+        // SQLite
+        print("Criando banco de dados...")
+        let db = CarroDB()
+        db.createTables()
+        print("Banco de dados criado com sucesso.")
+        
         self.window!.makeKeyAndVisible()
+        
+       
         return true
     }
 
