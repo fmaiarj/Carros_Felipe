@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Criando banco de dados...")
         let db = CarroDB()
         db.createTables()
+        db.close()
         print("Banco de dados criado com sucesso.")
         
         self.window!.makeKeyAndVisible()

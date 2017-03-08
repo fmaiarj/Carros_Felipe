@@ -264,7 +264,7 @@ class SQLiteHelper: NSObject {
     func getString(stmt: OpaquePointer, index: CInt) -> String {
     
         let cString = SQLiteObjc.getText(stmt, idx: index)
-        let s = String(describing: cString)
+        let s = String(describing: cString!)
         return s
     
     }

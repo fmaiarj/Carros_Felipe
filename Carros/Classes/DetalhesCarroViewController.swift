@@ -30,8 +30,14 @@ class DetalhesCarroViewController: UIViewController {
             self.title = c.nome
             
             self.tDesc.text = c.desc;
+    
+            print(c.url_foto)
             
             self.img.setUrl(url: c.url_foto)
+            
+            let btnDeletar = UIBarButtonItem(title: "Deletar", style: .plain, target: self, action: "onClickDeletar")
+            
+            self.navigationItem.rightBarButtonItem = btnDeletar
             
             
             //let img = UIImage(named: c.url_foto)
@@ -65,5 +71,37 @@ class DetalhesCarroViewController: UIViewController {
         self.setNeedsStatusBarAppearanceUpdate()
     }
     
+
+    func onClickDeletar() {
+      
+        let alert = UIAlertController(title: "Confima?", message: "nil", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (UIAlertAction) in self.deletar()}))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .destructive, handler: { (UIAlertAction) in }))
+        
+     
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func deletar() {
+        
+        let db = CarroDB()
+        
+        db.delete(carro: self.carro!)
+        
+        Alerta.alerta("Carro Excluido com sucesso", viewController: self, action: { (UIAlertAction) -> Void in
+        
+            self.goBack()
+        
+        })
+        
+    }
+    
+    func goBack() {
+        
+        self.navigationController!.popViewController(animated: true)
+    }
     
 }

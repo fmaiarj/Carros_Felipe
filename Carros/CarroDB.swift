@@ -52,11 +52,13 @@ class CarroDB {
             c.tipo = db.getString(stmt: stmt, index: 8)
             carros.append(c)
 
+            print(c.id)
+            print("Url Resgatada do banco de dados \(c.url_foto)")
+            
         }
         
         db.closeStatement(stmt: stmt)
         return carros
-
     }
 
     // Salva um novo carro ou atualiza se ja existe id

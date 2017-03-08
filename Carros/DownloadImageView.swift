@@ -78,6 +78,7 @@ class DownloadImageView: UIImageView {
             }
             
         }else{
+        
             
             var path = StringUtils.replace(url, string: "/", withString: "_")
             path = StringUtils.replace(path, string: "\\", withString:"_")

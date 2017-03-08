@@ -12,15 +12,39 @@ class CarroService {
     
     
     
-   
-    
-    class func getCarrosByTipo(tipo: String, callback: @escaping (_ carros: Array<Carro>, _ error:NSError?) -> Void ) {
+    class func getCarrosByTipo(tipo: String, cache: Bool ,callback: @escaping (_ carros: Array<Carro>, _ error:NSError?) -> Void ) {
+        
+        
+        
+        // Modificação Busca carros do banco , se tiveer e retornado
+        var db = CarroDB()
+        
+        print("Instaciando Dados")
+        
+        //let carros = db.getCarrosByTipo(tipo: tipo)
+        
+        let carros : Array<Carro> = cache ? db.getCarrosByTipo(tipo: tipo) : []
+        
+        print("Quantidade de carros devolvidos :: \(carros.count)")
+        
+        
+        
+        // Se existir no banco de dados retorna
+        if(carros.count > 0) {
+            db.close()
+            // Retorna os carros pela função de retorno
+            callback(carros, nil)
+            print("Retornando carros \(tipo) do banco")
+            return
+        }
+
         
         let http = URLSession.shared
         let url = URL(string: "http://www.livroiphone.com.br/carros/carros_" + tipo + ".json")!
         let request = URLRequest(url: url)
         
-        let task = http.dataTask(with: request, completionHandler: { (data, response , error) -> Void in
+        let task = http.dataTask(with: request, completionHandler: { (data, response , error) -> Void
+            in
             
             if(error != nil) {
                 
@@ -30,12 +54,31 @@ class CarroService {
                 
                 let carros = CarroService.parserJson(data!)
                 
-                DispatchQueue.main.async {
-                    callback(carros, nil)
+                if(carros.count > 0) {
+                    
+                    // Salva no banco de dados
+                    
+                    db = CarroDB()
+                    
+                    db.deletaCarrosTipo(tipo: tipo)
+                    
+                    for c in carros {
+                        c.tipo = tipo
+                        db.save(carro: c)
+                    }
+                    
+                    db.close()
                 }
-            }
-            
+                
+                // retornar dados para função usando a thread principal
+                
+                DispatchQueue.main.sync {
+                    callback(carros, nil)
+                    
+                    }
+                }
         })
+        
         task.resume()
     }
 

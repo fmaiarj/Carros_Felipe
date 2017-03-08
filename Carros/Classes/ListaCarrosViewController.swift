@@ -69,7 +69,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         
         
         // Busca carros
-        self.buscarCarros()
+        self.buscarCarros(cache: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,10 +142,10 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         
     
         // Buscar os carros pelo tipo selecionado (classico, esportivo, luxo)
-        self.buscarCarros()
+        self.buscarCarros(cache: false)
     }
     
-    func buscarCarros() {
+    func buscarCarros(cache: Bool) {
         
         
         
@@ -153,9 +153,11 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         
         
         
+        var funcaoRetorno = { (carros: Array<Carro>!, error: NSError?) -> Void in
+        
         //Faz a consulta dos carros , e retornar o array pela função de retorno
         
-        CarroService.getCarrosByTipo(tipo: tipo, callback: { (carros: Array<Carro>, error: NSError?) in
+      //  CarroService.getCarrosByTipo(tipo: tipo, cache: cache ,callback: { (carros: Array<Carro>, error: NSError?) in
             
             if(error != nil) {
                 Alerta.alerta("Error: " + error!.localizedDescription , viewController: self)
@@ -167,8 +169,11 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
             }
             
             
-        })
+       // })
         
+        }
+        
+        CarroService.getCarrosByTipo(tipo: tipo, cache: cache, callback: funcaoRetorno)
         
         /*
         let http = URLSession.shared
@@ -212,7 +217,7 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
             
         
             print("Função Atualizar Chamada!")
-            buscarCarros()
+            buscarCarros(cache: false)
             
         }
         
