@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5EBB76611E69DF1C0032586C /* SQLiteObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB76601E69DF1C0032586C /* SQLiteObjc.m */; };
 		5EBB76631E6A12730032586C /* CarroDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB76621E6A12730032586C /* CarroDB.swift */; };
+		5ECC4DE51E71C9BC00612370 /* CarrosDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ECC4DE31E71C9BC00612370 /* CarrosDataModel.xcdatamodeld */; };
+		5ECC4DE71E71C9CC00612370 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECC4DE61E71C9CC00612370 /* CoreData.framework */; };
+		5ECC4E261E71E4A500612370 /* CarroDBCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECC4E251E71E4A500612370 /* CarroDBCoreData.swift */; };
+		5ECC4E271E76C48700612370 /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03854B1971F83F00713BC4 /* Carro.swift */; };
 		5EDA675F1E68D54F002C215D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EDA675E1E68D54F002C215D /* libsqlite3.tbd */; };
 		5EDA67611E68D5AE002C215D /* SQLiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA67601E68D5AE002C215D /* SQLiteHelper.swift */; };
 		5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */; };
@@ -16,7 +20,6 @@
 		DD013FB519FC4E4D00303133 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD013FB419FC4E4D00303133 /* Launch Screen.xib */; };
 		DD038547197195D900713BC4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = DD038546197195D900713BC4 /* index.html */; };
 		DD03854A1971F83600713BC4 /* CarroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0385491971F83600713BC4 /* CarroService.swift */; };
-		DD03854C1971F83F00713BC4 /* Carro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03854B1971F83F00713BC4 /* Carro.swift */; };
 		DD0385511971FB0400713BC4 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0385501971FB0400713BC4 /* Alerta.swift */; };
 		DD0385551971FBA600713BC4 /* DetalhesCarroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0385541971FBA600713BC4 /* DetalhesCarroViewController.xib */; };
 		DD0385591971FD1000713BC4 /* CarroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0385571971FD1000713BC4 /* CarroCell.swift */; };
@@ -64,6 +67,9 @@
 		5EBB765F1E69DF1C0032586C /* SQLiteObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteObjc.h; sourceTree = "<group>"; };
 		5EBB76601E69DF1C0032586C /* SQLiteObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteObjc.m; sourceTree = "<group>"; };
 		5EBB76621E6A12730032586C /* CarroDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroDB.swift; sourceTree = "<group>"; };
+		5ECC4DE41E71C9BC00612370 /* CarrosDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarrosDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5ECC4DE61E71C9CC00612370 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5ECC4E251E71E4A500612370 /* CarroDBCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarroDBCoreData.swift; sourceTree = "<group>"; };
 		5EDA675E1E68D54F002C215D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5EDA67601E68D5AE002C215D /* SQLiteHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteHelper.swift; sourceTree = "<group>"; };
 		5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECC4DE71E71C9CC00612370 /* CoreData.framework in Frameworks */,
 				5EDA675F1E68D54F002C215D /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +140,7 @@
 		5EDA675D1E68D54F002C215D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5ECC4DE61E71C9CC00612370 /* CoreData.framework */,
 				5EDA675E1E68D54F002C215D /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
@@ -144,6 +152,7 @@
 				DD11B07A19799FF900179D7A /* XML-SAX */,
 				DD0385491971F83600713BC4 /* CarroService.swift */,
 				DD03854B1971F83F00713BC4 /* Carro.swift */,
+				5ECC4DE31E71C9BC00612370 /* CarrosDataModel.xcdatamodeld */,
 				5EFEEE4E1E5E3AD2003C94FD /* Prefs.swift */,
 				5EFEEE501E5F5F67003C94FD /* DownloadImageView.swift */,
 				5EDA67601E68D5AE002C215D /* SQLiteHelper.swift */,
@@ -206,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				DD36A82A197027A000FBBB40 /* AppDelegate.swift */,
+				5ECC4E251E71E4A500612370 /* CarroDBCoreData.swift */,
 				DD013FB419FC4E4D00303133 /* Launch Screen.xib */,
 				DDBED9E9197AB0B50064C1D5 /* Carros-Bridging-Header.h */,
 				DD36A8951970589A00FBBB40 /* Classes */,
@@ -455,14 +465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECC4E271E76C48700612370 /* Carro.swift in Sources */,
 				DD36A89D19705AD300FBBB40 /* DetalhesCarroViewController.swift in Sources */,
 				DD0385591971FD1000713BC4 /* CarroCell.swift in Sources */,
 				DDEF42E3197421270012D3A7 /* MyTabBarController.swift in Sources */,
+				5ECC4DE51E71C9BC00612370 /* CarrosDataModel.xcdatamodeld in Sources */,
 				DDEF42DE19741A580012D3A7 /* Utils.swift in Sources */,
 				5EBB76611E69DF1C0032586C /* SQLiteObjc.m in Sources */,
 				DDEF42E0197421070012D3A7 /* MyNavigationController.swift in Sources */,
 				5EDA67611E68D5AE002C215D /* SQLiteHelper.swift in Sources */,
-				DD03854C1971F83F00713BC4 /* Carro.swift in Sources */,
 				5EFEEE4F1E5E3AD2003C94FD /* Prefs.swift in Sources */,
 				5EBB76631E6A12730032586C /* CarroDB.swift in Sources */,
 				DDD4A5641DAD162A006D326C /* StringUtils.swift in Sources */,
@@ -474,6 +485,7 @@
 				DD03854A1971F83600713BC4 /* CarroService.swift in Sources */,
 				DD36A82B197027A000FBBB40 /* AppDelegate.swift in Sources */,
 				DDBED9EC197AB0B50064C1D5 /* SMXMLDocument.m in Sources */,
+				5ECC4E261E71E4A500612370 /* CarroDBCoreData.swift in Sources */,
 				DD0385511971FB0400713BC4 /* Alerta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +700,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5ECC4DE31E71C9BC00612370 /* CarrosDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5ECC4DE41E71C9BC00612370 /* CarrosDataModel.xcdatamodel */,
+			);
+			currentVersion = 5ECC4DE41E71C9BC00612370 /* CarrosDataModel.xcdatamodel */;
+			path = CarrosDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD36A81D197027A000FBBB40 /* Project object */;
 }

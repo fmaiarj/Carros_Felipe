@@ -29,6 +29,15 @@ class ListaCarrosViewController: UIViewController, UITableViewDataSource,UITable
         super.init(coder: aDecoder)
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
+        self.buscarCarros(cache: true)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
